@@ -1,0 +1,41 @@
+from emi import EmiCalculator
+from Constants import months
+
+class EmiEstimator():
+	prev_principal_amount = None
+	prev_interest_per_annum = None
+	prev_tennure = None
+	prev_month = None
+	prev_year = None
+			
+	def __init__():
+		prev = input('Do you have an existing loan (Y/N): ')
+		
+		if lower(prev[0].strip()) == 'y':
+			self.prev_principal_amount = float(input('Previous loan amount: '))
+			self.prev_interest_per_annum = float(input('Previous loan rate of Interest: '))
+			self.prev_tennure = int(input('Previous loan tennure: '))
+			self.prev_month = int(input('Starting month (number): '))
+			self.prev_year = int(input('Starting year (YYYY): '))
+		
+		self.principal_amount = float(input('Current Loan amount: '))
+		self.interest_per_annum = float(input('Current expected rate of Interest (comma ',' seperated for multiple values): ').strip().split(','))
+		self.tennure = int(input('Number of months: '))
+		self.start_year = int(input('Planned year range start (YYYY): '))
+		self.end_year = int(input('Planned year range start (YYYY): '))
+		self.start_month = int(input('Expected start month range to begin estimate(number): '))
+		self.end_month = int(input('Expected start month range to end estimate(number): '))
+				
+		self.emiCalculator = EmiCalculator()
+		
+		
+	def create_estimate():
+		estimate_list = []
+		self.emiCalculator.set_data(self.prev_principal_amount, self.prev_interest_per_annum, self.prev_tennure, self.prev_month, self.prev_year)
+		self.prev_emi, self.prev_payment_list, self.prev_tennure_list = emiCalculator.calculate_emi()
+		
+		current_month = self.start_month - 1 if self.start_month <= 12 and self.start_month > 0 else 0
+		current_month = self.end_month - 1 if self.end_month <= 12 and self.end_month > 0 else 0
+		for year in range(start_year, end_year+1):
+		existing_amount
+		
